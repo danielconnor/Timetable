@@ -1,0 +1,72 @@
+body {
+  overflow:hidden;
+}
+
+
+#content {
+  top: 48px;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
+
+#content > section {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: relative;
+}
+
+#countdown {
+  display: block;
+  margin: 0 auto;
+}
+
+#timetable .scroll-title {
+
+}
+#timetable .scroll-title {
+
+}
+#days {
+  padding-left: 25px;
+  height: 18px;
+}
+#days .scroll-content{
+  width: 500px;
+  height: 25px;
+}
+#days .scroll-content div {
+  width: 100px;
+  float: left;
+  text-align: center;
+}
+#periods {
+
+}
+#periods .scroll-content {
+  width: 50px;
+}
+#periods .scroll-content div {
+  height: 100px;
+}
+#timetable .table {
+  padding: 5px;
+  display: block;
+  -webkit-box-shadow: inset 3px 3px 3px #000;
+  position: absolute;
+  top: 25px;
+  left: 50px;
+  bottom: 0;
+  right: 0;
+  background-color: #333;
+}
+
+#timetable .table .column {
+  width: 100px;
+  height: 100%;
+  float: left;
+}
+#timetable .table .column div {
+  height: 100px;
+}

@@ -1,0 +1,119 @@
+<link rel="stylesheet" type="text/css" href="css/normalize.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="css/android.css">
+
+
+<script src="js/jquery-dev.js"></script>
+<script src="js/date.js"></script>
+<script src="js/underscore.js"></script>
+<script src="js/backbone.js"></script>
+<script src="js/sync.js"></script>
+
+<!-- Models -->
+<script src="app/models/Timetable.js"></script>
+<script src="app/models/Day.js"></script>
+<script src="app/models/Class.js"></script>
+
+<!-- Views -->
+<script src="app/views/Timetable.js"></script>
+<script src="app/views/DayDetails.js"></script>
+<script src="app/views/ClassDetails.js"></script>
+<script src="app/views/Info.js"></script>
+
+<!--Collections -->
+
+
+<body class="dark">
+  <header>
+    <nav>
+      <ul class="tabs">
+        <li class="active">
+          <a href="#info"><img src="icons/holo_dark/mdpi/2-action-about.png"/></a>
+        </li>
+        <li>
+          <a href="#timetable"><img src="icons/holo_dark/hdpi/10-device-access-time.png"/></a>
+        </li>
+        <li>
+          <a href="#classDetails"><img src="icons/holo_dark/hdpi/6-social-group.png"/></a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <div id="content">
+    <section id="timetable">
+      <div class="scroll-title" id="days">
+        <div class="scroll-content">
+          <div>Mon</div>
+          <div>Tues</div>
+          <div>Wed</div>
+          <div>Thurs</div>
+          <div>Fri</div>
+        </div>
+      </div>
+      <div class="scroll-title" id="periods">
+        <div class="scroll-content">
+          <div>9:00-10:00</div>
+          <div>10:00-11:00</div>
+          <div>11:00-12:00</div>
+          <div>12:00-13:00</div>
+          <div>13:00-14:00</div>
+          <div>14:00-15:00</div>
+          <div>15:00-16:00</div>
+        </div>
+      </div>
+      <div class="table">
+        <div class="column">
+          <div>Data Structures</div>
+          <div>Soft Eng</div>
+          <div>Maths</div>
+        </div>
+        <div class="column">
+          <div>Soft Eng</div>
+          <div>Data Structures</div>
+          <div>Maths</div>
+        </div>
+        <div class="column">
+          <div>Maths</div>
+          <div>Data Structures</div>
+          <div>Soft Eng</div>
+        </div>
+        <div class="column">
+          <div>Maths</div>
+          <div>Soft Eng</div>
+          <div>Data Structures</div>
+        </div>
+        <div class="column">
+          <div>Data Structures</div>
+          <div>Soft Eng</div>
+          <div>Maths</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="info">
+      classes completed: <span id="num-classes">2/3</span><br>
+      up next: <span id="next-class">Data Structures and Algorithms</span><br>
+      with: <span id="next-lecturer">Aine Byrne</span><br>
+      at: <span id="next-time">10:00am</span><br>
+      
+      <canvas id="countdown" width="200" height="200"></canvas>
+
+    </section>
+
+    <section id="dayDetails">
+
+    </section>
+
+    <section id="classDetails">
+      <label>Lecturer: <span>Chris Meudec</span></label>
+
+      <div id="progress">
+
+      </div>
+
+    </section>
+    
+  </div>
+
+  <script src="app/app.js"></script>
+</body>
