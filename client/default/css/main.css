@@ -22,10 +22,10 @@ body {
   margin: 0 auto;
 }
 
-#timetable .scroll-title {
+#timetableView .scroll-title {
 
 }
-#timetable .scroll-title {
+#timetableView .scroll-title {
 
 }
 #days {
@@ -50,7 +50,7 @@ body {
 #periods .scroll-content div {
   height: 100px;
 }
-#timetable .table {
+#timetableView .table {
   padding: 5px;
   display: block;
   -webkit-box-shadow: inset 3px 3px 3px #000;
@@ -62,10 +62,10 @@ body {
   background-color: #333;
 }
 
-#timetable .table .column {
+#timetableView .table .column {
   width: 100px;
   height: 100%;
   float: left;
 }
-#timetable .table .column div {
+#timetableView .table .column div {
   height: 100px;

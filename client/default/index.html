@@ -19,6 +19,7 @@
 <script src="app/views/DayDetails.js"></script>
 <script src="app/views/ClassDetails.js"></script>
 <script src="app/views/Info.js"></script>
+<script src="app/views/Nav.js"></script>
 
 <!--Collections -->
 
@@ -27,20 +28,20 @@
   <header>
     <nav>
       <ul class="tabs">
-        <li class="active">
+        <li>
           <a href="#info"><img src="icons/holo_dark/mdpi/2-action-about.png"/></a>
         </li>
         <li>
           <a href="#timetable"><img src="icons/holo_dark/mdpi/calendar.png"/></a>
         </li>
         <li>
-          <a href="#classDetails"><img src="icons/holo_dark/hdpi/6-social-group.png"/></a>
+          <a href="#class"><img src="icons/holo_dark/hdpi/6-social-group.png"/></a>
         </li>
       </ul>
     </nav>
   </header>
   <div id="content">
-    <section id="timetable">
+    <section id="timetableView">
       <div class="scroll-title" id="days">
         <div class="scroll-content">
           <div>Mon</div>
@@ -90,7 +91,7 @@
       </div>
     </section>
 
-    <section id="info">
+    <section id="infoView">
       classes completed: <span id="num-classes">2/3</span><br>
       up next: <span id="next-class">Data Structures and Algorithms</span><br>
       with: <span id="next-lecturer">Aine Byrne</span><br>
@@ -100,11 +101,11 @@
 
     </section>
 
-    <section id="dayDetails">
+    <section id="dayView">
 
     </section>
 
-    <section id="classDetails">
+    <section id="classView">
       <label>Lecturer: <span>Chris Meudec</span></label>
 
       <div id="progress">

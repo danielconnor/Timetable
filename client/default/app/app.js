@@ -2,14 +2,24 @@
     "use strict";
 
     window.app = new (Backbone.Router.extend({
-      views: {
-        timetable: null,
-        dayDetails: null,
-        classDetails: null,
-        info: null
-      },
+      views: new Backbone.Model({
+        timetable: new Views.Timetable({
+          el: $("#timetableView")
+        }),
+        dayDetails: new Views.ClassDetails({
+          el: $("#classView")
+        }),
+        classDetails: new Views.DayDetails({
+          el: $("#dayView")
+        }),
+        info: new Views.Info({
+          el: $("#infoView")
+        }),
+        active: null
+      }),
 
-      activeView: null,
+      nav: null,
+
 
       timetable: null,
 
@@ -22,32 +32,25 @@
       initialize: function() {
         var views = this.views;
 
-        views.timetable = new Views.Timetable({
-          el: $("#timetable")
-        });
-        views.classDetails = new Views.ClassDetails({
-          el: $("#classDetails")
-        });
-        views.dayDetails = new Views.DayDetails({
-          el: $("#dayDetails")
-        });
-
-        views.info = new Views.Info({
-          el: $("#info")
+        this.nav = new Views.Nav({
+          el: $("header"),
+          model: this.views
         });
 
         document.location = "#info";
       },
 
       show: function(page, args) {
-        var view = this.views[page];
+        var views = this.views,
+          view = views.get(page),
+          activeView = this.views.get("active");
 
-        if(view && view !== this.activeView) {
-          if(this.activeView) {
-            this.activeView.hide();
+        if(view && view !== activeView) {
+          if(activeView) {
+            activeView.hide();
           }
           view.show.apply(view, args);
-          this.activeView = view;
+          views.set("active", view);
         }
       },
 

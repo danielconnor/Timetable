@@ -4,9 +4,9 @@ var Views = Views || {};
   "use strict";
 
   Views.Timetable = Backbone.View.extend({
+    url: "#timetable",
+    
     initialize: function(options) {
-
-
 
     },
 

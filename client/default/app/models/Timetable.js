@@ -6,7 +6,7 @@ var Models = Models || {};
   Models.Timetable = Backbone.Model.extend({
     
     initialize: function(options) {
-      
+
     } 
   });
 

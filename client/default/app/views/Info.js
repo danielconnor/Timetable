@@ -7,6 +7,8 @@ var Views = Views || {};
 
     timeout: null,
 
+    url: "#info",
+
     initialize: function(options) {
       this.canvas = $("#countdown")[0];
       this.context = this.canvas.getContext("2d");
