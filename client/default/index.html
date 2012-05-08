@@ -7,12 +7,12 @@
 <script src="js/date.js"></script>
 <script src="js/underscore.js"></script>
 <script src="js/backbone.js"></script>
-<script src="js/sync.js"></script>
+<!-- <script src="js/sync.js"></script> -->
+<script src="js/TimetableRetriever.js"></script>
 
 <!-- Models -->
-<script src="app/models/Timetable.js"></script>
 <script src="app/models/Day.js"></script>
-<script src="app/models/Class.js"></script>
+<script src="app/models/Period.js"></script>
 
 <!-- Views -->
 <script src="app/views/Timetable.js"></script>
@@ -22,6 +22,8 @@
 <script src="app/views/Nav.js"></script>
 
 <!--Collections -->
+<script src="app/collections/Timetable.js"></script>
+<script src="app/collections/Periods.js"></script>
 
 
 <body class="dark">
@@ -44,11 +46,6 @@
     <section id="timetableView">
       <div class="scroll-title" id="days">
         <div class="scroll-content">
-          <div>Mon</div>
-          <div>Tues</div>
-          <div>Wed</div>
-          <div>Thurs</div>
-          <div>Fri</div>
         </div>
       </div>
       <div class="scroll-title" id="periods">
@@ -63,31 +60,7 @@
         </div>
       </div>
       <div class="table">
-        <div class="column">
-          <div>Data Structures</div>
-          <div>Soft Eng</div>
-          <div>Maths</div>
-        </div>
-        <div class="column">
-          <div>Soft Eng</div>
-          <div>Data Structures</div>
-          <div>Maths</div>
-        </div>
-        <div class="column">
-          <div>Maths</div>
-          <div>Data Structures</div>
-          <div>Soft Eng</div>
-        </div>
-        <div class="column">
-          <div>Maths</div>
-          <div>Soft Eng</div>
-          <div>Data Structures</div>
-        </div>
-        <div class="column">
-          <div>Data Structures</div>
-          <div>Soft Eng</div>
-          <div>Maths</div>
-        </div>
+        
       </div>
     </section>
 

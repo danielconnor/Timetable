@@ -66,6 +66,9 @@ body {
   width: 100px;
   height: 100%;
   float: left;
+  position: relative;
 }
 #timetableView .table .column div {
-  height: 100px;
+  position: absolute;
+  background-color: #2B84A5;
+}
