@@ -25,15 +25,13 @@ module.exports = {
   //     });
 
   //   });
-
-  // }
-
-
-  $fh.web({
-    url: "http://timetable.itcarlow.ie/reporting/textspreadsheet;student+set;id;KCSOFD_3A+Set?t=student+set+textspreadsheet&days=1-5&weeks=&periods=5-40&template=student+set+textspreadsheet"
-  }, function(err, res) {
-    cb(err, res);
-  });
+  
+    $fh.web({
+      url: "http://timetable.itcarlow.ie/reporting/textspreadsheet;student+set;id;KCSOFD_3A+Set?t=student+set+textspreadsheet&days=1-5&weeks=&periods=5-40&template=student+set+textspreadsheet"
+    }, function(err, res) {
+      cb(err, res);
+    });
+  }
 
 };
 
