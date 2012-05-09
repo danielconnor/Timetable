@@ -21,8 +21,10 @@ module.exports = {
       res.chunkedEncoding = true;
 
       
+      
       res.on("data", function(chunk) {
         resText += chunk.toString();
+        cb(null, {res: resText});
       });
 
       res.on("end", function() {
