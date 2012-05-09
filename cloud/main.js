@@ -7,7 +7,6 @@ module.exports = {
 
   getTimetable: function(params, cb) {
 
-
     var req = http.get({
       host: "timetable.itcarlow.ie",
       path: "/reporting/textspreadsheet;student+set;id;KCSOFD_3A+Set?t=student+set+textspreadsheet&days=1-5&weeks=&periods=5-40&template=student+set+textspreadsheet",
@@ -94,7 +93,7 @@ function parseTimetable(document, cb) {
       });
     }
 
-    cb && cb(timetable);
+    cb && cb(null, timetable);
 }
 
 
