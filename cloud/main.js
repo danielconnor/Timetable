@@ -26,9 +26,7 @@ module.exports = {
       });
 
       res.on("end", function() {
-        parseHtml(resText, function(err, dom) {
-          parseTimetable(dom, cb);
-        });
+        cb(null, {res: resText});
       });
 
     });
