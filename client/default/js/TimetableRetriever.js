@@ -43,5 +43,5 @@ var parseTimetable = function(html, cb) {
       });
     }
 
-    cb && cb(timetable);    
+    cb && cb(timetable);
 };

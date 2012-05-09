@@ -9,7 +9,7 @@ var Views = Views || {};
     initialize: function(options) {
       this.dayScroll = $("#days .scroll-content");
       this.timeScroll = $("#periods .scroll-content");
-      this.table = this.$el.find(".table");
+      this.table = this.$el.find(".table .scroll-content");
 
       this.collection = new Collections.Timetable();
       this.collection.on("reset", function() {
@@ -29,7 +29,7 @@ var Views = Views || {};
           periods = day.get("periods"),
           column = $("<div></div>").addClass("column");
 
-        $("<div></div>").text(day.name).appendTo(dayScroll);
+        $("<div></div>").text(day.get("name")).appendTo(dayScroll);
 
         for(var j = 0; j < periods.length; j++) {
           var period = periods.at(j);
@@ -42,7 +42,14 @@ var Views = Views || {};
         }
         table.append(column);
       }
+      table.css("width", days.length * 100 + "px");
+      timeScroll.css("top", "-" + days.at(0).get("periods").at(0).get("start").getHours() * 100 + "px")
 
+      this.scroll = new SuperScroll(table[0],{
+        xScrollBar: dayScroll[0],
+        yScrollBar: timeScroll[0]
+      });
+        
     },
 
     hide: function() {
@@ -51,6 +58,10 @@ var Views = Views || {};
 
     show: function(collection) {
       this.$el.show();
+
+      window.a && a.refresh();
+      window.b && b.refresh();
+      window.c && c.refresh();
 
       if(collection && this.collection !== collection) {
         this.collection = collection;

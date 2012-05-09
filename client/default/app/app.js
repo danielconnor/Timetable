@@ -37,6 +37,8 @@
           model: this.views
         });
 
+        //this.swipe = new Swipe(document.getElementById("content"));
+
         document.location = "#info";
       },
 
