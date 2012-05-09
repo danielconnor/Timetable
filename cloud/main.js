@@ -7,33 +7,34 @@ module.exports = {
 
   getTimetable: function(params, cb) {
 
-    var req = http.get({
-      host: "timetable.itcarlow.ie",
-      path: "/reporting/textspreadsheet;student+set;id;KCSOFD_3A+Set?t=student+set+textspreadsheet&days=1-5&weeks=&periods=5-40&template=student+set+textspreadsheet",
-      port: 80
-    }, function(res) {
-      var resText = "";
-
-      // itcarlow is weird
-      // we don't get any headers telling us about the response
-      // body so just tell node that it's chunked or else the 
-      // response will end before we get any data
-      res.chunkedEncoding = true;
-
+  //   var req = http.get({
+  //     host: "timetable.itcarlow.ie",
+  //     path: "/reporting/textspreadsheet;student+set;id;KCSOFD_3A+Set?t=student+set+textspreadsheet&days=1-5&weeks=&periods=5-40&template=student+set+textspreadsheet",
+  //     port: 80
+  //   }, function(res) {
+  //     var resText = "";
       
-      
-      res.on("data", function(chunk) {
-        resText += chunk.toString();
-        cb(null, {res: resText});
-      });
+  //     res.on("data", function(chunk) {
+  //       resText += chunk.toString();
+  //     });
 
-      res.on("end", function() {
-        cb(null, {res: resText});
-      });
+  //     res.on("end", function() {
+  //       parseHtml(resText, function(err, dom) {
+  //         parseTimetable(dom, cb);
+  //       });
+  //     });
 
-    });
+  //   });
 
-  }
+  // }
+
+
+  $fh.web({
+    url: "timetable.itcarlow.ie/reporting/textspreadsheet;student+set;id;KCSOFD_3A+Set?t=student+set+textspreadsheet&days=1-5&weeks=&periods=5-40&template=student+set+textspreadsheet"
+  }, function(err, res) {
+    cb(err, res);
+  });
+
 };
 
 function parseHtml(html, cb) {

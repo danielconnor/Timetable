@@ -1,5 +1,5 @@
 var cloud = require("./main.js");
 
-cloud.getTimetable({}, function(timetable) {
+cloud.getTimetable({}, function(err, timetable) {
   console.log(timetable);
 });
